@@ -16,4 +16,31 @@
     <import resource="spring-mybatis.xml"/>
 
 
+
+
+    <!-- 扫描文件（自动将servicec层注入） -->
+    <context:component-scan base-package="com.spring"/>
+
+    <!-- 使用注解配置bean和注入 -->
+    <context:annotation-config />
+
+    <bean id="druid-stat-interceptor"
+          class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
+    </bean>
+
+    <bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut"
+          scope="prototype">
+        <property name="patterns">
+            <list>
+                <value>com.spring.*.service.*</value>
+                <value>com.spring.*.dao.*</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--<aop:config proxy-target-class="true">-->
+        <!--<aop:advisor advice-ref="druid-stat-interceptor" pointcut-ref="druid-stat-pointcut" />-->
+    <!--</aop:config>-->
+
+
 </beans>
