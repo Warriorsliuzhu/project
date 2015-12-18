@@ -30,12 +30,6 @@ public class LoginController {
 //
 //    }
 //
-//    @RequestMapping(value = "")
-//    public String index(Model model) {
-//        System.out.println("+++++++++++++++++++++++");
-//        return "test";
-//    }
-
     @RequestMapping(value = "login")
     public String manageView(Model model) {
         userService.findUserList();
