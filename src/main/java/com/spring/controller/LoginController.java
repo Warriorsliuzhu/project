@@ -39,7 +39,6 @@ public class LoginController {
     @RequestMapping(value = "login")
     public String manageView(Model model) {
         userService.findUserList();
-        System.out.println("aaaaaaaaaaaaaaaaaaa");
         return "login";
     }
 
