@@ -24,7 +24,6 @@ public class LoginController {
 //    public String index(Model model) {
 //        System.out.println("----------------------");
 //        model.addAttribute("test", "渴望光荣");
-//
 //        model.addAttribute("_pagePath", _pagePath);
 //        return "layout";
 //    }
