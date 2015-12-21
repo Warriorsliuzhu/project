@@ -27,7 +27,6 @@ public class LoginController {
 //
 //        model.addAttribute("_pagePath", _pagePath);
 //        return "layout";
-//
 //    }
 //
     @RequestMapping(value = "login")
