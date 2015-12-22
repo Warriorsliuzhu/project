@@ -5,8 +5,10 @@
 </#macro>
 
 <#macro content>
-<h4>暂无数据</h4>
-${_pagePath}
+
+${count1}
+<br>
+${count2}
 
 </#macro>
 

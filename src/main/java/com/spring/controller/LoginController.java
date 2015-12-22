@@ -1,5 +1,7 @@
 package com.spring.controller;
 
+import com.spring.server.BlackfinComms;
+import com.spring.server.BlackfinServer;
 import com.spring.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import uk.co.irisys.Blackfin;
+
+import java.io.IOException;
+import java.util.Date;
 
 
 /**
@@ -15,12 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LoginController {
     private final String _pagePath = "index.ftl";
-    private Logger logger= LoggerFactory.getLogger(LoginController.class);
+    private Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private UserService userService;
 
-//    @RequestMapping("")
+    //    @RequestMapping("")
 //    public String index(Model model) {
 //        System.out.println("----------------------");
 //        model.addAttribute("test", "渴望光荣");
