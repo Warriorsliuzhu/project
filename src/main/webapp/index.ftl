@@ -8,8 +8,8 @@
 
 <div class="container">
     <div class="row-fluid">
-        <div class="span12">
-            <h2>元智公司人数统计</h2>
+        <div class="span12" style="text-align: center">
+            <h2>元智五楼办公室人数统计</h2>（每10秒刷新一次）
         </div>
     </div>
     <div class="row-fluid" style="margin-top: 30px">
@@ -38,30 +38,31 @@
             <span>${count1}人</span>
         </div>
     </div>
-
+<#---->
     <div class="row-fluid">
         <div class="span1">
             <span>停留人数</span>
         </div>
         <div class="span10">
             <div class="progress progress-warning">
-                <div class="bar" style="width: ${count2-count1}%"></div>
+                <div class="bar" style="width: ${count3}%"></div>
             </div>
         </div>
-
+    <#---->
         <div class="span1">
-            <span>${count2-count1}人</span>
+            <span>${count3}人</span>
         </div>
     </div>
 
 </div>
-${count1}
-<br>
-${count2}
-<#---->
 </#macro>
 
 <#macro script>
 <script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            location.reload();
+        }, 10000);
+    })
 </script>
 </#macro>

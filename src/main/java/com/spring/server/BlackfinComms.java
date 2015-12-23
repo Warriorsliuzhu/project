@@ -61,7 +61,7 @@ public class BlackfinComms implements Runnable, IBlackfinCommsErrorHandler {
                 }
 
                 while (!m_threadDone) {
-                    if ((System.currentTimeMillis() - ticks) > 30000) {
+                    if ((System.currentTimeMillis() - ticks) > 5000) {
                         Thread.sleep(1000);
                         //Do some other stuff
                         String macAddress = blackfin.GetMACAddress();
@@ -97,7 +97,7 @@ public class BlackfinComms implements Runnable, IBlackfinCommsErrorHandler {
                         ticks = System.currentTimeMillis();
                     }
 
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 }
 
             }

@@ -24,9 +24,13 @@ public class IndexController {
                 Blackfin.Count count = blackfin.GetCurrentCount();
                 model.addAttribute("count1", count.countLines.get(0).toString());
                 model.addAttribute("count2", count.countLines.get(1).toString());
+                int count1 = Integer.parseInt(count.countLines.get(1).toString());
+                int count0 = Integer.parseInt(count.countLines.get(0).toString());
+                model.addAttribute("count3", count1 - count0);
             } else {
                 model.addAttribute("count1", 0);
                 model.addAttribute("count2", 0);
+                model.addAttribute("count3", 0);
             }
         } catch (IOException e) {
             e.printStackTrace();
