@@ -16,14 +16,18 @@ import java.util.Date;
 public class IndexController {
     private final String _pagePath = "index.ftl";
 
-    @RequestMapping("findNum")
+    @RequestMapping("num_index")
     public String index(Model model) {
         Blackfin blackfin = BlackfinComms.blackfin;
         try {
-            Blackfin.Count count = blackfin.GetCurrentCount();
-            System.out.println(new Date() + "count 1 " + count.countLines.get(0).toString() + " count 2 " + count.countLines.get(1).toString());
-            model.addAttribute("count1", count.countLines.get(0).toString());
-            model.addAttribute("count2", count.countLines.get(1).toString());
+            if (blackfin != null) {
+                Blackfin.Count count = blackfin.GetCurrentCount();
+                model.addAttribute("count1", count.countLines.get(0).toString());
+                model.addAttribute("count2", count.countLines.get(1).toString());
+            } else {
+                model.addAttribute("count1", 0);
+                model.addAttribute("count2", 0);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -31,9 +35,4 @@ public class IndexController {
         return "layout";
     }
 
-//    @RequestMapping(value = "")
-//    public String manageView(Model model) {
-//        System.out.println("+++++++++++++++++++++++");
-//        return "test";
-//    }
 }
