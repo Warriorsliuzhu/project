@@ -11,6 +11,7 @@
         <div class="span12" style="text-align: center">
             <h2>元智五楼办公室人数统计</h2>（每10秒刷新一次）
         </div>
+        <h4 style="text-align: center;">${mess!}</h4>
     </div>
     <div class="row-fluid" style="margin-top: 30px">
         <div class="span1">
