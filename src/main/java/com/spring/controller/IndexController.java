@@ -28,16 +28,17 @@ public class IndexController {
                 Blackfin.Count count = blackfin.GetCurrentCount();
                 Calendar start = Calendar.getInstance();
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                Date date = format.parse("2015-12-24 00:00:00");
+                Date date = format.parse("2015-12-17 00:00:00");
                 start.setTime(date);
                 Calendar end = Calendar.getInstance();
-                end.setTime(new Date());
+                Date date2 = format.parse("2015-12-18 00:00:00");
+                end.setTime(date2);
                 List<Blackfin.Count> counts = blackfin.GetCounts(start, end);
                 model.addAttribute("count1", count.countLines.get(0).toString());
                 model.addAttribute("count2", count.countLines.get(1).toString());
                 int count1 = Integer.parseInt(count.countLines.get(1).toString());
                 int count0 = Integer.parseInt(count.countLines.get(0).toString());
-                model.addAttribute("count3", count1 - count0);
+                model.addAttribute("count3", count0 - count1);
             } else {
                 model.addAttribute("count1", 0);
                 model.addAttribute("count2", 0);

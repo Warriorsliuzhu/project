@@ -19,11 +19,11 @@
         </div>
         <div class="span10">
             <div class="progress progress-info">
-                <div class="bar" style="width: ${count2}%"></div>
+                <div class="bar" style="width: ${count1}%"></div>
             </div>
         </div>
         <div class="span1">
-            <span>${count2}人</span>
+            <span>${count1}人</span>
         </div>
     </div>
     <div class="row-fluid">
@@ -32,11 +32,11 @@
         </div>
         <div class="span10">
             <div class="progress progress-success">
-                <div class="bar" style="width: ${count1}%"></div>
+                <div class="bar" style="width: ${count2}%"></div>
             </div>
         </div>
         <div class="span1">
-            <span>${count1}人</span>
+            <span>${count2}人</span>
         </div>
     </div>
 <#---->
