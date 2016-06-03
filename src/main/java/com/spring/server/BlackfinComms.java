@@ -1,6 +1,7 @@
 
 package com.spring.server;
 
+import com.spring.controller.LimitQueue;
 import uk.co.irisys.Blackfin;
 import uk.co.irisys.Blackfin.Count;
 import uk.co.irisys.BlackfinEngine;
@@ -8,6 +9,7 @@ import uk.co.irisys.IBlackfinCommsErrorHandler;
 
 import java.io.IOException;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -18,7 +20,7 @@ public class BlackfinComms implements Runnable, IBlackfinCommsErrorHandler {
     private final BlackfinEngine m_engine;
     private boolean m_threadDone = false;
     public static Blackfin blackfin;
-
+    public static LimitQueue<String> lqueue = new LimitQueue<String>(5);
     /**
      * Creates a new data collection object
      *
@@ -86,7 +88,8 @@ public class BlackfinComms implements Runnable, IBlackfinCommsErrorHandler {
               /*for(Count ct : counts){
               System.out.println("count 1 " + ct.countLines.get(0).toString() + " count 2 " + ct.countLines.get(1).toString());
               }*/
-
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                            lqueue.offer(sdf.format(new Date())+" : 进 : " + count.countLines.get(0).toString() + " 出: " + count.countLines.get(1).toString());
 
                             System.out.println(new Date()+"count 1 " + count.countLines.get(0).toString() + " count 2 " + count.countLines.get(1).toString());
 

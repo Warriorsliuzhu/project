@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row-fluid">
         <div class="span12" style="text-align: center">
-            <h2>元智五楼办公室人数统计</h2>（每10秒刷新一次）
+            <h2>元智人数统计测试</h2>（每10秒刷新一次）
         </div>
         <h4 style="text-align: center;">${mess!}</h4>
     </div>
@@ -39,21 +39,32 @@
             <span>${count2}人</span>
         </div>
     </div>
-<#---->
+
     <div class="row-fluid">
-        <div class="span1">
-            <span>停留人数</span>
-        </div>
-        <div class="span10">
-            <div class="progress progress-warning">
-                <div class="bar" style="width: ${count3}%"></div>
+        <div class="span12">
+            <div class="well well-large">
+                <#list logs as log>
+                ${log} <br/>
+                </#list>
             </div>
         </div>
-    <#---->
-        <div class="span1">
-            <span>${count3}人</span>
-        </div>
     </div>
+
+<#--&lt;#&ndash;&ndash;&gt;-->
+<#--<div class="row-fluid">-->
+<#--<div class="span1">-->
+<#--<span>停留人数</span>-->
+<#--</div>-->
+<#--<div class="span10">-->
+<#--<div class="progress progress-warning">-->
+<#--<div class="bar" style="width: ${count3}%"></div>-->
+<#--</div>-->
+<#--</div>-->
+<#--&lt;#&ndash;&ndash;&gt;-->
+<#--<div class="span1">-->
+<#--<span>${count3}人</span>-->
+<#--</div>-->
+<#--</div>-->
 
 </div>
 </#macro>
