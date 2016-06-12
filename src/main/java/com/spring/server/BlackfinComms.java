@@ -20,7 +20,7 @@ public class BlackfinComms implements Runnable, IBlackfinCommsErrorHandler {
     private final BlackfinEngine m_engine;
     private boolean m_threadDone = false;
     public static Blackfin blackfin;
-    public static LimitQueue<String> lqueue = new LimitQueue<String>(5);
+    public static LimitQueue<String> lqueue = new LimitQueue<String>(10);
     /**
      * Creates a new data collection object
      *

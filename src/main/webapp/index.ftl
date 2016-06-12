@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row-fluid">
         <div class="span12" style="text-align: center">
-            <h2>元智人数统计测试</h2>（每10秒刷新一次）
+            <h2>人数统计测试</h2>（每10秒刷新一次）
         </div>
         <h4 style="text-align: center;">${mess!}</h4>
     </div>
@@ -43,7 +43,8 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="well well-large">
-                <#list logs as log>
+                <p style="font-size: 20px;"> 日志记录 </p>
+                <#list logs?reverse as log>
                 ${log} <br/>
                 </#list>
             </div>
